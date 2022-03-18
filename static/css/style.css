@@ -53,13 +53,15 @@ nav ul li{
 
 #card {
     background-color: white;
+    height: 15rem;
     width: 35%;
-    min-width: 350px;
-    max-width: 450px;
+    min-width: 18rem;
+    max-width: 18rem;
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 2px 4px 24px #e0e8ff;
     overflow: hidden;
+    padding: 2rem;
 }
   
 #card > img {
