@@ -4,27 +4,68 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;600;700;900&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="static/css/style.css">
   <title>Inicio</title>
+
 </head>
 <body>
   <!-- HEADER -->
+  <header class="hero">
+    <nav>
+      <h2 class="logo">PROMEDIK</h2>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- MAIN -->
-  <main class="main">
-  	<h1>Productos de limpieza</h1>
+  <main class='mainContainer'>
+    <section class='flexBoxContainer'>
+      <div class='leftFlexBox'>
+        <h1 class="mb">Productos de limpieza</h1>
+        <div id="card">
+          <img name="slider" width="500" height="250">
+          
+          <!--<div id="container">
+            <h2 class="mb">Order Summary</h2>
+            <p class="description mb">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente a facere accusamus voluptas hic dignissimos molestiae itaque, quae provident rem.
+            </p>
+          </div>-->
 
-    <img name="slider" width="500">
+        </div>
+      </div>
+      <div class='rightFlexBox'>
+
+      </div>
+    </section>
+
+      <!-- FOOTER -->
+    <footer class="footer">
+      <div class='socialIcons'>
+        <i class="fab fa-facebook-f icon"></i>
+        <i class="fab fa-twitter icon"></i>
+        <i class="fab fa-instagram icon"></i>
+      </div>
+
+      <div class="attribution">
+        © 2022 Copyright Promedik. 
+        <!--<a href="#">Your Name Here</a>. -->
+      </div>
+    </footer>
+
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer_box">
-      © 2021 Copyright
-    </div>
-    <!--<div class="footer_box">
-      <a class="contacto.html" href="#!">Contacto</a>
-    </div>-->
-  </footer>
+
 </body>
 </html>
