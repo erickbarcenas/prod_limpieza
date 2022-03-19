@@ -1,0 +1,38 @@
+
+
+
+@media screen and (min-width: 780px) and (max-width: 1024px){
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 780px){
+    .logo {
+        padding: 1rem 0;
+        margin-right: 0;
+    }
+    
+    .nav_ul {
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        padding: 1rem 0;
+        margin-right:0;
+    }
+    
+    .nav_ul {
+        padding: 1rem 0;
+    }
+
+    .nosotros_card {
+        width: 19rem !important;
+        height: 35rem;
+    }
+
+
+    .nosotros_card_skills {
+        width: 100%;
+    }
+}

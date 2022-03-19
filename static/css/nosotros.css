@@ -1,11 +1,68 @@
-.nosotros_card{
-
+.nosotros_card {
+    margin: auto;
+    padding: 2em;
+    border-radius: 2em;
+    border: 1px solid transparentize(white, 0.5);
+    text-shadow: 0 0 1em transparentize(white, 0.5);
+    background: transparentize(white, 0.8);
+    backdrop-filter: blur(20px);
+    transform: perspective(500px);
+    transform-style: preserve-3d;
+    width: 10rem;
+    width: 32rem;
+    height: 31rem;
 }
 
-.nosotros_card_name{
-    
+.nosotros_card_name {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    margin: 1rem 0;
 }
 
 .nosotros_profile {
+    height: 14rem;
     border-radius: 50%;
+    width: 14rem;
+    margin: auto;
+    display: flex;
 }
+
+
+.nosotros_card_description {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+.nosotros_card_skills {
+    padding: 30px 10px;
+    text-align: end;
+    width: 65%;
+    display: flex;
+    margin: auto;
+    margin: 0.2rem auto;
+}
+
+.nosotros_card_skills li{
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    margin: 0.5rem;
+    display: inline-block;
+    padding: 0 25px;
+    border-radius: 25px;
+    background-color: #64198b;
+    margin: 0.5rem;
+    font-size: 11px;
+}
+

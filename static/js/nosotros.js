@@ -13,9 +13,14 @@ window.addEventListener('load', ()=>{
     show_img();
 
     // SET TEXT
-    document.getElementsByClassName("nosotros_card_name")[0].innerHTML = "Erick Iván Bárcenas Martínez";
+    document.getElementsByClassName("nosotros_card_name")[0].innerHTML = "Erick Iván Bárcenas Martínez, 23 años";
 
-    document.getElementsByClassName("nosotros_card_description")[0].innerHTML = "Me especializo en el desarrollo web Full Stack con el fin de desarrollar productos y servicios que cumplan los objetivos del negocio y del usuario.";
+    document.getElementsByClassName("nosotros_card_description")[0].innerHTML = "Mi objetivo es usar la plataforma que proporciona Elixir para el " +
+
+    "desarrollo de soluciones: tolerante a fallas, concurrentes y de alta capacidad.<br/>" +
+
+    "Creativo, trabajo bajo presión, innovador<br/>" +
+    "¡Me siento preparado para asumir nuevos retos profesionales!";
 
     
 })
