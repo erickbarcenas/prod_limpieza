@@ -4,9 +4,9 @@ window.addEventListener('load', ()=>{
     let idx_imgs = 0;
     let time = 1000;
 
-    let img_1 = 'static/imgs/tech/elixir.jpg';
-    let img_2 = 'static/imgs/tech/phoenix.jpg';
-    let img_3 = 'static/imgs/tech/postgresql.jpg';
+    let img_1 = 'static/imgs/productos/cubrebocas1.jpg';
+    let img_2 = 'static/imgs/productos/cubrebocas2.jpg';
+    let img_3 = 'static/imgs/productos/cubrebocas3.jpg';
 
     let imgs = [img_1, img_2, img_3];
 

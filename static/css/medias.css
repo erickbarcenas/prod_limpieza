@@ -35,4 +35,8 @@
     .nosotros_card_skills {
         width: 100%;
     }
+
+    .main__container .container__cards .card{
+        width: 100%;
+    }
 }
