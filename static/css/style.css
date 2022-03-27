@@ -23,8 +23,14 @@ body {
     overflow-x: hidden;
 }
 
-/* ========== UTILS ============ */
+a{
+    text-decoration: none !important;
+}
 
+/** ====================================
+   *          🔰 UTILS
+
+  ==================================== **/
 .border__bottom {
     border-bottom: 1px solid #e4e4e4 !important;
 }
@@ -33,8 +39,11 @@ body {
     margin-top: 2rem;
 }
 
-/* ========== HEADER ============ */
 
+/** ====================================
+   *          🔰 HEADER
+
+  ==================================== **/
 .hero{
     /*display: inline-flex;*/
     width: 100%;
@@ -101,7 +110,12 @@ header nav a{
     /*border-radius: 10px 10px 0 0;*/
 }
 
-/* ---------- FORM -------------*/
+/** ====================================
+   *          🔰 FORM
+
+  ==================================== **/
+
+
 form {
     display: block;
     /*margin-top: 0em;*/
@@ -172,8 +186,12 @@ form {
     box-shadow: 0px 0.1px .5px rgba(49, 103, 235, 0.27);
 }
 
-/* ========== MAIN ============ */
 
+
+/** ====================================
+   *          🔰 MAIN
+
+  ==================================== **/
 #card {
     background-color: white;
     height: 15rem;
@@ -224,9 +242,10 @@ form {
     color: #3829e0;
 }
 
-button {
+.btn__search {
     display: block;
-    width: 100%;
+    height: 2.5rem;
+    width: 2.5rem;
     padding: 8px;
     border: none;
     background-color: #3167EB;
@@ -234,8 +253,23 @@ button {
     border-radius: 5px;
     box-shadow: 2px 4px 8px #e0e8ff;
     margin-bottom: 24px;
+    cursor: pointer;
 }
 
+.btn__transparent {
+    outline: none;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn__text_gray {
+    color: rgb(65, 65, 65);
+    font-size: .9rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
 
 /**/
 .main__container{
@@ -342,11 +376,14 @@ button {
     color: white;
     float: left;
 }*/
-/* ========== FOTER ============ */
 
+
+/** ====================================
+   *          🔰 FOTER
+
+  ==================================== **/
 footer{
     height: auto;
-    margin-top: 50px;
     background-color: #3167EB;
     padding: 1rem;
     color: #fff;
@@ -394,4 +431,54 @@ footer{
 .attribution{
     margin: 1rem auto 0 auto;
     font-size: 0.7rem;
+}
+
+
+.sticky-cta {
+    background-color: #3167eb;
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    color: #fff;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 1px solid #3167eb;
+}
+
+.sticky-cta .cta-container {
+    margin: 0 auto;
+    display: flex;
+}
+
+.sticky-cta .cta-container .cta.whatsapp-color {
+    background-color: #25d366;
+}
+
+.sticky-cta .cta-container .cta.whatsapp-color a {
+    color: white;
+}
+
+.sticky-cta .cta-container .cta {
+    font-weight: 700;
+    flex: 1 1;
+    background-color: #ffcd00;
+    border-radius: 5px;
+    padding: 15px 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+
+
+.icon {
+    color: white;
+}
+
+/** ====================================
+   *          🔰 EFFECTS
+
+  ==================================== **/
+.is-hidden{
+    display: none;
 }

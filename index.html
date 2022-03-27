@@ -46,15 +46,28 @@
       <li><a href="nosotros.html">Nosotros</a></li>
     </ul>-->
     <div class="input__group">
-      <input type="text" class="form__search" style="width:60%;" placeholder="Search">
+      <input type="search" 
+      id="searchbox" 
+      class="form__search" 
+      style="width:60%;" 
+      placeholder="Buscar">
+
       <div class="input-group-append">
-        <button class="btn btn-primary" type="submit">
+        <button class="btn__search"
+          onclick="seach_product()"
+        >
           <i class="fa fa-search"></i>
         </button>
       </div>
     </div>
   </nav>
  
+
+  <!---->
+
+
+
+  <!---->
 
   <!-- MAIN -->
   <main class='main__container mt-2'>
@@ -91,74 +104,97 @@
     <section class="container__cards">
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas1.jpg');">
         <div class="texts">
-          <h3>Cubrebocas</h3>
+          <h3>Cubrebocas 1</h3>
           <p>$3.00 c/u</p>
         </div>
+        <!-- any keyword -->
+      <span class="is-hidden">secret</span> 
+
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas2.jpg');">
         <div class="texts">
-          <h3>Cubrebocas</h3>
+          <h3>Cubrebocas 2</h3>
           <p>$3.00 c/u</p>
         </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas3.jpg');">
         <div class="texts">
-          <h3>Cubrebocas</h3>
+          <h3>Cubrebocas 3</h3>
           <p>$3.00 c/u</p>
         </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas4.jpg');">
         <div class="texts">
-          <h3>Cubrebocas</h3>
+          <h3>Cubrebocas 4</h3>
           <p>$3.00 c/u</p>
         </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas1.jpg');">
         <div class="texts">
-          <h3>Cubrebocas</h3>
+          <h3>Cubrebocas 5</h3>
           <p>$3.00 c/u</p>
         </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas2.jpg');">
         <div class="texts">
-          <h3>Cubrebocas</h3>
+          <h3>Cubrebocas 6</h3>
           <p>$3.00 c/u</p>
         </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas3.jpg');">
         <div class="texts">
-          <h3>Cubrebocas</h3>
+          <h3>Cubrebocas 7</h3>
           <p>$3.00 c/u</p>
         </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas4.jpg');">
         <div class="texts">
-          <h3>Cubrebocas</h3>
+          <h3>Cubrebocas 8</h3>
           <p>$3.00 c/u</p>
         </div>
       </div>
-      
+
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas4.jpg');">
         <div class="texts">
-          <h3>Cubrebocas</h3>
+          <h3>Cubrebocas 9</h3>
           <p>$3.00 c/u</p>
         </div>
       </div>
     </section>
 
       <!-- FOOTER -->
+    <div data-sal="fade" class="sticky-cta sal-animate" data-sal-delay="1000" id="modal__index">
+      <div class="cta-container">
+        <div class="cta">
+        <button class="btn__transparent btn__text_gray" onclick="show_products()" >
+          Ver productos
+        </button>
+        </div>
+        <div class="cta whatsapp-color">
+          <a rel="noopener noreferrer" target="_blank" href="https://api.whatsapp.com/send?phone=5212221495577&amp;text=¡Hola equipo Promedik! Quiero saber más sobre sus productos">
+            Chatea con nosotros</a>
+          </div>
+        </div>
+      </div>
+    
     <footer>
       <div class='social__icons'>
-        <i class="fab fa-facebook-f icon"></i>
-        <i class="fab fa-twitter icon"></i>
-        <i class="fab fa-instagram icon"></i>
+        <a href="">
+          <i class="fab fa-facebook-f icon"></i>
+        </a>
+        <a href="">
+          <i class="fab fa-twitter icon"></i>
+        </a>
+        <a href="">
+          <i class="fab fa-instagram icon"></i>
+        </a>
       </div>
 
     
@@ -171,6 +207,9 @@
         © 2022 Promedik Textil
         <!--<a href="#">Your Name Here</a>. -->
       </div>
+
+      
+
     </footer>
 
   </main>
