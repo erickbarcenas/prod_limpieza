@@ -509,7 +509,7 @@ footer{
 
 /* Hamburguer */  
 
-.burger-menu {
+#burger-menu {
     cursor: pointer;
     height: 27px;
     width: 17.5%;
@@ -519,9 +519,9 @@ footer{
     z-index: 20000000;
   }
 
-  .burger-menu span,
-  .burger-menu span:before,
-  .burger-menu span:after {
+  #burger-menu span,
+  #burger-menu span:before,
+  #burger-menu span:after {
     background: #3167EB;
     display: block;
     height: 4px;
@@ -529,37 +529,37 @@ footer{
     position: absolute;
     transition: 0.3s ease-in-out;
   }
-  .burger-menu span:before,
-  .burger-menu span:after {
+  #burger-menu span:before,
+  #burger-menu span:after {
     content: "";
   }
-  .burger-menu span {
+  #burger-menu span {
     right: 0px;
     top: 13px;
     width: 27px;
   }
-  .burger-menu span:before {
+  #burger-menu span:before {
     left: 0px;
     top: -10px;
     width: 16px;
   }
-  .burger-menu span:after {
+  #burger-menu span:after {
     left: 0px;
     top: 10px;
     width: 20px;
   }
   
-  .burger-menu.close span {
+  #burger-menu.close span {
     transform: rotate(-45deg);
     top: 13px;
     width: 27px;
   }
-  .burger-menu.close span:before {
+  #burger-menu.close span:before {
     top: 0px;
     transform: rotate(90deg);
     width: 27px;
   }
-  .burger-menu.close span:after {
+  #burger-menu.close span:after {
     top: 0px;
     left:0;
     transform: rotate(90deg);
@@ -567,7 +567,7 @@ footer{
     width:0;
   }
   
-  .menu{
+  #menu{
     z-index:1;
     min-width:100%;
     min-height:100%;
@@ -582,7 +582,7 @@ footer{
     
   }
   
-  .menu.overlay{
+  #menu.overlay{
     visibility: visible;
     opacity: 1;
     padding-top:100px;
@@ -592,10 +592,10 @@ footer{
     
   }
   
-  .menu li{
+  #menu li{
     list-style:none;
   }
-  .menu a{
+  #menu a{
     color:#fff;
     display:block;
     font-size: 32px;
@@ -639,6 +639,7 @@ footer{
     padding: 0 20px;
     border: 1px solid #e6e6e6;
     box-sizing: border-box;
+    outline: none;
 }
 
 .btn-send {
@@ -648,6 +649,8 @@ footer{
     color: #ffcd00;
     background: #37474f;
     height: 60px;
+    outline: none;
+    border: none;
 }
 
 .svg-inline--fa {
@@ -656,4 +659,9 @@ footer{
     height: 1em;
     overflow: visible;
     vertical-align: -0.125em;
+}
+
+.contact__subtitle{
+    text-align: center;
+    color: white;
 }

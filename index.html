@@ -39,15 +39,15 @@
   </header>-->
 
   <nav class="">
-    <div class="burger-menu">
+    <div id="burger-menu">
       <span></span>
     </div>
-    <div class="menu">
+    <div id="menu">
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="#">Productos</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a onclick="go_to_anchor('contact')">Contacto</a></li>
         </ul>
     </div>
 
@@ -68,7 +68,6 @@
   <!-- MAIN -->
   <main class='main__container mt-2'>
     
-
     
 
     <section class="container__carousel">
@@ -181,9 +180,12 @@
     </section>
 
 
-    <div class="row_contacto">
+    <div class="row_contacto" id="contact">
       <div class="horizontal-form" id="horizontal-form">
-        <h2 class="text-centered text-white">Recibí una muestra gratis del contenido</h2>
+        <h2 class="text-centered text-white">
+          Contacto
+        </h2>
+        <p class="contact__subtitle">¡Nos encantaría saber de usted!</p>
         <p class="copy text-centered text-white">
 
         </p><div class="container">

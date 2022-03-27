@@ -29,6 +29,18 @@
     #carousel {
         margin-top: 8rem;
     }
+
+    .contact-form, .download-program-form {
+        display: flex;
+    }
+
+    .contact-form .input-group, .download-program-form .input-group {
+        margin: 5px;
+    }
+
+    .btn-send {
+        margin: 0.5rem;
+    }
 }
 
 @media screen and (min-width: 480px) and (max-width: 780px){
