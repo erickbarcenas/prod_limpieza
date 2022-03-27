@@ -2,8 +2,21 @@
 
 
 @media screen and (min-width: 780px) and (max-width: 1024px){
+    
+    .card .texts {
+        padding-top: 10rem;
+    }
+
     .main__container .container__cards .card{
         width: 30%;
+    }
+
+    .social__icons {
+        margin: 1rem 21rem;
+    }
+
+    .policies {
+        margin: auto 16rem;
     }
 }
 
@@ -23,10 +36,10 @@
 }
 
 @media screen and (max-width: 480px) {
-    .logo {
+    /*.logo {
         padding: 1rem 0;
         margin-right:0;
-    }
+    }*/
     
     .nav_ul {
         padding: 1rem 0;
@@ -45,4 +58,14 @@
     .main__container .container__cards .card{
         width: 100%;
     }
+    
+    
+    .list_horizontal_container ul li:first-child {
+        margin-left: 2rem;
+    }
+
+    .list_horizontal_container ul li:last-child {
+        margin-right: 2rem;
+    }
+    
 }

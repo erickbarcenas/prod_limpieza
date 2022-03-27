@@ -20,8 +20,18 @@ body {
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
+/* ========== UTILS ============ */
+
+.border__bottom {
+    border-bottom: 1px solid #e4e4e4 !important;
+}
+
+.mt-2{
+    margin-top: 2rem;
+}
 
 /* ========== HEADER ============ */
 
@@ -33,37 +43,51 @@ body {
 
 .logo {
     padding: 30px;
-    margin-right: 180px;
-    width: 35%;
+    /*margin-right: 180px;*/
+    width: 33.33%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 96.9%;
+    text-decoration: none;
+    margin: 1rem;
+    color: #3167EB;
 }
   
 
 nav{
     width: 100%;
-    display: inline-flex;
+    display: block;
+    height: 8rem;
+    margin: 2rem auto 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 
 .nav_ul {
     padding: 30px 10px;
-    text-align: end;
-    width: 65%;
+    text-align: center;
+    width: 33.33%;
 }
 
 .nav_ulv ul li{
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 
 header nav a{
-    color: hsl(226, 100%, 50%);
+    color: #3167EB;
     text-decoration: none;
 }
 
 #carousel {
-    background-color: #2b94d1bd;
+    background-color: white;
     height: 17rem;
     width: 100%;
     margin: 0;
@@ -75,6 +99,77 @@ header nav a{
 #carousel > img {
     width: 100%;
     /*border-radius: 10px 10px 0 0;*/
+}
+
+/* ---------- FORM -------------*/
+form {
+    display: block;
+    /*margin-top: 0em;*/
+    padding-top: 30px;
+    width: 33.33%;
+}
+
+.input__group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.input-group-append {
+    margin-left: -1px;
+}
+
+.input-group-append {
+    display: flex;
+    height: 2.5rem;
+}
+
+.input-group-append .btn {
+    position: relative;
+    z-index: 2;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.fa {
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+}
+
+
+
+.input__group > .form__search{
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+
+.form__search{
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.9rem + 2px);
+    padding: 0.45rem 0.85rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.37rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form__search:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #a5bdf6;
+    outline: 0;
+    box-shadow: 0px 0.1px .5px rgba(49, 103, 235, 0.27);
 }
 
 /* ========== MAIN ============ */
@@ -100,6 +195,8 @@ header nav a{
 .flexBoxContainer {
     display: block;
 }
+
+
   
 .leftFlexBox {
     display: flex;
@@ -132,7 +229,7 @@ button {
     width: 100%;
     padding: 8px;
     border: none;
-    background-color: #3829e0;
+    background-color: #3167EB;
     color: white;
     border-radius: 5px;
     box-shadow: 2px 4px 8px #e0e8ff;
@@ -150,9 +247,10 @@ button {
     /*gap: 20px;*/
 }
 .container__carousel{
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
 }
 
 .main__container .container__cards{
@@ -165,24 +263,94 @@ button {
 
 .main__container .container__cards .card{
     border-radius: 10px;
-	min-height: 200px;
+	height: 14rem;
 	font-weight: bold;
 	padding: 20px;
 	position: relative;
 	overflow: hidden;
-	background-size: contain;
+	background-size: 10rem 8rem;
     background-repeat: no-repeat;
 	background-position: center center;
     width: 33.33%;
     margin: auto;
-    box-shadow: 0px 3px 4px 0px #e0e8ff;
+    /*box-shadow: 0px 3px 4px 0px #e0e8ff;*/
+    box-shadow: 0px 8px 20px rgba(49, 103, 235, 0.27);
+    cursor: pointer;
+}
+
+
+.card .texts{
+    padding-top: 9rem;
+    height: 2rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.card .texts h3{
+    font-size: 0.9rem;
+}
+
+.card .texts p{
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.list_horizontal_container {
+    display: flex;
+    overflow: auto;
+    padding: 1rem 0;
+    width: 100vw;
+}
+
+.list_horizontal_container ul {
+    display: flex!important;
+    list-style-type: none;
+    margin: auto;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    text-decoration: none;
+    width: 300vw;
+    margin: auto;
+    justify-content: center;
+}
+
+.list_horizontal_container ul li {
+    background: #3167EB;
+    border-radius: 10px;
+    min-width: 7rem;
+    color: white;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    margin: auto 0.5rem;
+    cursor: pointer;
 }
 
 
 
+.render__items {
+    display: flex;
+    width: 100%;
+}
 
-
+/*.render__items .chip {
+    background: #3167EB;
+    border-radius: 10px;
+    width: 7rem;
+    text-align: center;
+    color: white;
+    float: left;
+}*/
 /* ========== FOTER ============ */
+
+footer{
+    height: auto;
+    margin-top: 50px;
+    background-color: #3167EB;
+    padding: 1rem;
+    color: #fff;
+}
 
 .mb {
     margin-bottom: 24px;
@@ -193,13 +361,18 @@ button {
     color: grey;
 }
   
-.socialIcons {
+.social__icons {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2px 0 40px 0;
-    width: 100%;
-    height: 100px;
+    justify-content: space-between;
+    height: auto;
+    margin: 1rem 4rem
+}
+
+.policies > a {
+    margin: 0.5rem auto;
+    font-size: 0.7rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
 }
 
 .attribution{
@@ -216,4 +389,9 @@ button {
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.attribution{
+    margin: 1rem auto 0 auto;
+    font-size: 0.7rem;
 }

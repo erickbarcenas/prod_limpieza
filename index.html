@@ -7,6 +7,8 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Font awesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
   <link
     href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;600;700;900&display=swap"
     rel="stylesheet"
@@ -18,85 +20,155 @@
 </head>
 <body>
   <!-- HEADER -->
-  <header class="hero">
-    <nav>
-      <a href="index.html" class="logo">Promedik Textil</h2>
+  <!--<header class="hero">
+    <nav class="border__bottom">
+      <a href="index.html" class="logo">Promedik Textil</a>
+      <form class="search">
+          <div class="input__group">
+              <input type="text" class="form__search" style="width:60%;" placeholder="Search">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+          </div>
+      </form> 
       <ul class="nav_ul">
-        <!--<li><a href="#">Cursos</a></li>-->
         <li><a href="nosotros.html">Nosotros</a></li>
-        <!--<li><a href="#">Contacto</a></li>-->
       </ul>
     </nav>
-    <section class="container__carousel">
+  </header>-->
+
+  <nav class="">
+    <a href="index.html" class="logo">Promedik Textil</a>
+
+    <!--<ul class="nav_ul">
+      <li><a href="nosotros.html">Nosotros</a></li>
+    </ul>-->
+    <div class="input__group">
+      <input type="text" class="form__search" style="width:60%;" placeholder="Search">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+ 
+
+  <!-- MAIN -->
+  <main class='main__container mt-2'>
+    
+    <!--<section class="container__carousel">
       <div id="carousel">
         <img name="slider" width="500" height="250">
       </div>
-    </section>
-  </header>
+    </section>-->
 
-  <!-- MAIN -->
-  <main class='main__container'>
-    
+    <section class="list_horizontal_container">
+      <ul class="render__items">
+        <li class="chip">
+          example 1
+        </li>
+        <li class="chip">
+          example 2
+        </li>
+        <li class="chip">
+          example 3
+        </li>
+        <li class="chip">
+          example 4
+        </li>
+        <li class="chip">
+          example 3
+        </li>
+        <li class="chip">
+          example 4
+        </li>
+      </ul>
+    </section>
+
     <section class="container__cards">
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas1.jpg');">
-        <h3>Cubrebocas</h3>
-        <p>Precio</p>
+        <div class="texts">
+          <h3>Cubrebocas</h3>
+          <p>$3.00 c/u</p>
+        </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas2.jpg');">
-        <h3>Cubrebocas</h3>
-        <p>Precio</p>
+        <div class="texts">
+          <h3>Cubrebocas</h3>
+          <p>$3.00 c/u</p>
+        </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas3.jpg');">
-        <h3>Cubrebocas</h3>
-        <p>Precio</p>
+        <div class="texts">
+          <h3>Cubrebocas</h3>
+          <p>$3.00 c/u</p>
+        </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas4.jpg');">
-        <h3>Cubrebocas</h3>
-        <p>Precio</p>
+        <div class="texts">
+          <h3>Cubrebocas</h3>
+          <p>$3.00 c/u</p>
+        </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas1.jpg');">
-        <h3>Cubrebocas</h3>
-        <p>Precio</p>
+        <div class="texts">
+          <h3>Cubrebocas</h3>
+          <p>$3.00 c/u</p>
+        </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas2.jpg');">
-        <h3>Cubrebocas</h3>
-        <p>Precio</p>
+        <div class="texts">
+          <h3>Cubrebocas</h3>
+          <p>$3.00 c/u</p>
+        </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas3.jpg');">
-        <h3>Cubrebocas</h3>
-        <p>Precio</p>
+        <div class="texts">
+          <h3>Cubrebocas</h3>
+          <p>$3.00 c/u</p>
+        </div>
       </div>
 
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas4.jpg');">
-        <h3>Cubrebocas</h3>
-        <p>Precio</p>
+        <div class="texts">
+          <h3>Cubrebocas</h3>
+          <p>$3.00 c/u</p>
+        </div>
+      </div>
+      
+      <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas4.jpg');">
+        <div class="texts">
+          <h3>Cubrebocas</h3>
+          <p>$3.00 c/u</p>
+        </div>
       </div>
     </section>
 
       <!-- FOOTER -->
-    <footer class="footer">
-      <div class='socialIcons'>
+    <footer>
+      <div class='social__icons'>
         <i class="fab fa-facebook-f icon"></i>
         <i class="fab fa-twitter icon"></i>
         <i class="fab fa-instagram icon"></i>
       </div>
 
-      
-     
+    
 
-      <hr>
       <div class="policies">
-        <div>Política de privacidad</div>
-        <div>Condiciones de uso</div>
+        <a href="/">Política de privacidad</a>
+        <a href="/">Condiciones de uso</a>
       </div>
       <div class="attribution">
-        © 2022 Promedik Textil.
+        © 2022 Promedik Textil
         <!--<a href="#">Your Name Here</a>. -->
       </div>
     </footer>
