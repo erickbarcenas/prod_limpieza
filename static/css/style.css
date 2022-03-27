@@ -23,6 +23,7 @@ body {
     overflow-x: hidden;
 }
 
+
 a{
     text-decoration: none !important;
 }
@@ -49,32 +50,31 @@ a{
     width: 100%;
 }
 
-
 .logo {
-    padding: 30px;
-    /*margin-right: 180px;*/
-    width: 33.33%;
+    padding: 30px 0;
+    width: 65%;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 96.9%;
-    text-decoration: none;
-    margin: 1rem;
+    margin: 1rem 0;
     color: #3167EB;
 }
+
+
   
 
-nav{
+
+nav {
     width: 100%;
-    display: block;
+    display: flex;
     height: 8rem;
-    margin: 2rem auto 0 auto;
+    margin: 0rem auto 0 auto;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-
 
 .nav_ul {
     padding: 30px 10px;
@@ -479,6 +479,105 @@ footer{
    *          🔰 EFFECTS
 
   ==================================== **/
+
+/* Search */  
 .is-hidden{
     display: none;
 }
+
+.shopping_cart{
+    height: 27px;
+    width: 17.5%;
+}
+
+/* Hamburguer */  
+
+.burger-menu {
+    cursor: pointer;
+    height: 27px;
+    width: 17.5%;
+    margin: 0;
+    overflow: visible;
+    position: relative;
+    z-index:2;
+  }
+  .burger-menu span,
+  .burger-menu span:before,
+  .burger-menu span:after {
+    background: #3167EB;
+    display: block;
+    height: 4px;
+    opacity: 1;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+  }
+  .burger-menu span:before,
+  .burger-menu span:after {
+    content: "";
+  }
+  .burger-menu span {
+    right: 0px;
+    top: 13px;
+    width: 27px;
+  }
+  .burger-menu span:before {
+    left: 0px;
+    top: -10px;
+    width: 16px;
+  }
+  .burger-menu span:after {
+    left: 0px;
+    top: 10px;
+    width: 20px;
+  }
+  
+  .burger-menu.close span {
+    transform: rotate(-45deg);
+    top: 13px;
+    width: 27px;
+  }
+  .burger-menu.close span:before {
+    top: 0px;
+    transform: rotate(90deg);
+    width: 27px;
+  }
+  .burger-menu.close span:after {
+    top: 0px;
+    left:0;
+    transform: rotate(90deg);
+    opacity:0;
+    width:0;
+  }
+  
+  .menu{
+    z-index:1;
+    min-width:100%;
+    min-height:100%;
+    position: fixed;
+    top:0;
+    height:0;
+    visibility: hidden;
+    opacity: 0;
+    text-align:center;
+    padding-top:20px;
+    transition: all 0.3s ease-in-out;
+    
+  }
+  
+  .menu.overlay{
+    visibility: visible;
+    opacity: 1;
+    padding-top:100px;
+    background:#3971ff;
+  }
+  
+  .menu li{
+    list-style:none;
+  }
+  .menu a{
+    color:#fff;
+    display:block;
+    font-size: 32px;
+    margin-bottom:30px;
+    text-decoration:none;
+  }

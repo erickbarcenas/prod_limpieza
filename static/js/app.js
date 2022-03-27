@@ -25,18 +25,29 @@ window.addEventListener('load', ()=>{
     setInterval(change_img, time);
 })
 */
+
 /** ====================================
 *  🔰 Index - Show Modal: products and whatsapp link
   ==================================== **/
-const targetDiv = document.getElementById("modal__index");
-const show_products = () => {
-    if (targetDiv.style.display !== "none") {
-        targetDiv.style.display = "none";
-        scroll(0,0);
-    } else {
+  const targetDiv = document.getElementById("modal__index");
+  const show_products = () => {
+      if (targetDiv.style.display !== "none") {
+          targetDiv.style.display = "none";
+          scroll(0,0);
+          localStorage.setItem('modal', JSON.stringify("hidden"));
+      } else {
+          targetDiv.style.display = "block";
+      }
+  }
+
+window.addEventListener('load', ()=>{
+    if(!localStorage.getItem('modal')) {
         targetDiv.style.display = "block";
+    }else{
+        targetDiv.style.display = "none"; 
     }
-}
+})
+
 
 /** ====================================
 *  🔰 Index - Input seach product
@@ -76,3 +87,23 @@ const show_products = () => {
     clearTimeout(typingTimer);
     typingTimer = setTimeout(liveSearch, typeInterval);
   }
+
+/** ====================================
+*  🔰 Index - Hamburguer
+  ==================================== **/
+  var userSelection = document.getElementsByClassName('burger-menu');
+
+  for(var i_burger = 0; i_burger < userSelection.length; i_burger++) {
+    ((idx) => {
+      userSelection[idx].addEventListener("click", function() {
+            var overlay = document.getElementsByClassName('menu');
+            userSelection[idx].addEventListener('click',function(){
+            
+            this.classList.toggle("close");
+            overlay[idx].classList.toggle("overlay");
+
+        });
+       })
+    })(i_burger);
+  }
+

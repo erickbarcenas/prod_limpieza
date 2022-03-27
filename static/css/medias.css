@@ -3,12 +3,19 @@
 
 @media screen and (min-width: 780px) and (max-width: 1024px){
     
+    .logo {
+        padding: 30px;
+    }
     .card .texts {
         padding-top: 10rem;
     }
 
     .main__container .container__cards .card{
         width: 30%;
+    }
+
+    nav{
+        margin: 2rem auto 0 auto;
     }
 
     .social__icons {
