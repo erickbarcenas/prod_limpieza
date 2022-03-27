@@ -7,8 +7,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Font awesome 5 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
   <link
     href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;600;700;900&display=swap"
     rel="stylesheet"
@@ -45,10 +44,10 @@
     </div>
     <div class="menu">
         <ul>
-          <li><a href="#">Inicio</a></li>
+          <li><a href="index.html">Inicio</a></li>
           <li><a href="#">Productos</a></li>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </div>
 
@@ -57,64 +56,61 @@
     <div class="shopping_cart">
       <img src="./static/imgs/resources/shopping_cart.png" alt="shopping_cart">
     </div>
-    <!--<ul class="nav_ul">
-      <li><a href="nosotros.html">Nosotros</a></li>
-    </ul>-->
-    
   </nav>
- 
+
 
   <!---->
 
-  <div class="input__group">
-    <input type="search" 
-    id="searchbox" 
-    class="form__search" 
-    style="width:60%;" 
-    placeholder="Buscar">
-
-    <div class="input-group-append">
-      <button class="btn__search"
-        onclick="seach_product()"
-      >
-        <i class="fa fa-search"></i>
-      </button>
-    </div>
-  </div>
+  
 
   <!---->
 
   <!-- MAIN -->
   <main class='main__container mt-2'>
     
-    <!--<section class="container__carousel">
+
+    
+
+    <section class="container__carousel">
       <div id="carousel">
         <img name="slider" width="500" height="250">
       </div>
-    </section>-->
+    </section>
 
+<!--
     <section class="list_horizontal_container">
       <ul class="render__items">
         <li class="chip">
-          example 1
+          Todo
         </li>
         <li class="chip">
-          example 2
+          Cubrebocas
         </li>
         <li class="chip">
-          example 3
-        </li>
-        <li class="chip">
-          example 4
-        </li>
-        <li class="chip">
-          example 3
-        </li>
-        <li class="chip">
-          example 4
+          Batas
         </li>
       </ul>
     </section>
+-->
+
+    <div class="input__group">
+      <input type="search" 
+      id="searchbox" 
+      class="form__search" 
+      style="width:60%;" 
+      placeholder="Buscar">
+  
+      <div class="input-group-append">
+        <button class="btn__search"
+          onclick="seach_product()"
+        >
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+
+    
 
     <section class="container__cards">
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas1.jpg');">
@@ -184,6 +180,37 @@
       </div>
     </section>
 
+
+    <div class="row_contacto">
+      <div class="horizontal-form" id="horizontal-form">
+        <h2 class="text-centered text-white">Recibí una muestra gratis del contenido</h2>
+        <p class="copy text-centered text-white">
+
+        </p><div class="container">
+          <div><div class="info-block"></div>
+          <form action="#" class="contact-form form__contact responsive">
+            <div class="input-group">
+              <input type="text" name="name" value="" class="form-input" placeholder="Nombre y apellido"></div>
+              <div class="input-group">
+                <input type="email" name="email" value="" class="form-input" placeholder="Email">
+              </div>
+              <div class="input-group">
+                <input type="text" name="phone" value="" class="form-input" placeholder="Whatsapp">
+              </div>
+              <div class="input-group">
+                <select name="course" class="form-input" type="text">
+                  <option selected="" value="">Selecciona una carrera</option>
+                  <option value="mkt">Marketing Digital</option>
+                  <option value="prog">Programación</option>
+                  <option value="coach">Coaching</option>
+                </select>
+              </div>
+              <button type="submit" class="form-last-idx-ar-btn btn-send w100">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="paper-plane" class="svg-inline--fa fa-paper-plane fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path fill="currentColor" d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path></svg></button></form></div></div></div>
+
+    </div>
+
       <!-- FOOTER -->
     <div data-sal="fade" class="sticky-cta sal-animate" data-sal-delay="1000" id="modal__index">
       <div class="cta-container">
@@ -223,10 +250,8 @@
         <!--<a href="#">Your Name Here</a>. -->
       </div>
 
-      
-
+    
     </footer>
-
   </main>
   <script type="text/javascript" src="static/js/app.js"></script>
 </body>

@@ -15,7 +15,7 @@
     }
 
     nav{
-        margin: 2rem auto 0 auto;
+        margin: 0rem auto 0 auto;
     }
 
     .social__icons {
@@ -24,6 +24,10 @@
 
     .policies {
         margin: auto 16rem;
+    }
+
+    #carousel {
+        margin-top: 8rem;
     }
 }
 

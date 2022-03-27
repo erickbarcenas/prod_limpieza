@@ -45,6 +45,13 @@ a{
    *          🔰 HEADER
 
   ==================================== **/
+
+
+
+/*------------------------*/  
+
+
+
 .hero{
     /*display: inline-flex;*/
     width: 100%;
@@ -74,6 +81,11 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: fixed;
+    z-index: 1000;
+    background: rgba(255,255,255,.8);
+    -webkit-backdrop-filter: blur(1.5rem) saturate(200%);
+    backdrop-filter: blur(1.5rem) saturate(200%);
 }
 
 .nav_ul {
@@ -103,11 +115,15 @@ header nav a{
     border-radius: 10px;
     overflow: hidden;
     padding: 0.5rem;
+    margin-top: 8rem;
+    
 }
   
 #carousel > img {
     width: 100%;
-    /*border-radius: 10px 10px 0 0;*/
+    border-radius:  1.25rem;
+    box-shadow: 0 0 .5rem #d3d3d3;
+    object-fit: cover;
 }
 
 /** ====================================
@@ -285,6 +301,7 @@ form {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
+    position: relative;
 }
 
 .main__container .container__cards{
@@ -499,8 +516,9 @@ footer{
     margin: 0;
     overflow: visible;
     position: relative;
-    z-index:2;
+    z-index: 20000000;
   }
+
   .burger-menu span,
   .burger-menu span:before,
   .burger-menu span:after {
@@ -568,7 +586,10 @@ footer{
     visibility: visible;
     opacity: 1;
     padding-top:100px;
-    background:#3971ff;
+    background: #3971ff;
+    z-index: 10000;
+    height: 100vh;
+    
   }
   
   .menu li{
@@ -581,3 +602,58 @@ footer{
     margin-bottom:30px;
     text-decoration:none;
   }
+
+/** ====================================
+   *        🔰 Contact
+
+  ==================================== **/
+.form__contact {
+    width: 100%;
+}
+
+.text-centered {
+    text-align: center;
+    color: #fff;
+}
+
+.horizontal-form {
+    background: #3167eb;
+    padding: 60px 10px 70px;
+}
+
+.contact-form, .download-program-form {
+    display: block;
+}
+
+
+.contact-form .input-group, .download-program-form .input-group {
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.contact-form .input-group .form-input, .download-program-form .input-group .form-input {
+    height: 60px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 0 20px;
+    border: 1px solid #e6e6e6;
+    box-sizing: border-box;
+}
+
+.btn-send {
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px;
+    color: #ffcd00;
+    background: #37474f;
+    height: 60px;
+}
+
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+}
