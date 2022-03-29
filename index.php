@@ -4,7 +4,7 @@
   require 'database.php';
 
   if (isset($_SESSION['user_id'])) {
-    $records = $conn->prepare('SELECT id, email, password FROM users WHERE id = :id');
+    $records = $conn->prepare('SELECT users.id, users.name, users.email, users.password FROM users WHERE id = :id');
     $records->bindParam(':id', $_SESSION['user_id']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
@@ -111,7 +111,7 @@
 
 
     
-
+    <div id="products"></div>
     <section class="container__cards">
       <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas1.jpg');">
         <div class="texts">
@@ -180,8 +180,14 @@
       </div>
     </section>
 
-    <div id="contact"></div>
+    
 
+    
+    
+    
+
+
+    <div id="contact"></div>
     <div class="row_contacto" >
         <h2 class="text-centered text-brand">Contacto</h2>
         <p class="contact__subtitle">¡Nos encantaría saber de usted!</p>
@@ -190,9 +196,9 @@
 
     <section class="contact-wrapper js-contactWrapper">
           <div class="contact-wrapper-top">
-            <button class="contact__header js-contactButton is-show" type="button" data-name="reach-us">Reach Us</button>
-            <button class="contact__header js-contactButton" type="button" data-name="about-us">About Us</button>
-            <button class="contact__header js-contactButton" type="button" data-name="find-us">Find Us</button>
+            <button class="contact__header js-contactButton is-show" type="button" data-name="reach-us">Contacto</button>
+            <button class="contact__header js-contactButton" type="button" data-name="about-us">Nosotros</button>
+            <button class="contact__header js-contactButton" type="button" data-name="find-us">Ubicación</button>
           </div>
           
         
@@ -207,7 +213,7 @@
                     maxlength="34"
                     value=""
                     class="form-input" 
-                    placeholder="Nombre y apellido">
+                    placeholder="Nombre">
                 </div>
                 
                 <div class="input-group">
@@ -218,13 +224,13 @@
                     maxlength="34"
                     value="" 
                     class="form-input" 
-                    placeholder="Email">
+                    placeholder="Correo">
                 </div>
   
                 <div class="input-group">
                   <input 
                     type="text" 
-                    name="phone"
+                    name="whatsapp"
                     required=""
                     maxlength="34"
                     value="" 
@@ -234,10 +240,10 @@
   
                 <div class="input-group">
                   <select name="course" class="form-input" type="text">
-                    <option selected="" value="">Selecciona una carrera</option>
-                    <option value="mkt">Marketing Digital</option>
-                    <option value="prog">Programación</option>
-                    <option value="coach">Coaching</option>
+                    <option selected="" value="">Selecciona un tema</option>
+                    <option value="1">Uniformes</option>
+                    <option value="2">Cubrebocas</option>
+                    <option value="3">Guantes</option>
                   </select>
                 </div>
   
@@ -248,7 +254,8 @@
                     cols="30" 
                     rows="5" 
                     required="" 
-                    placeholder="Enter your message"
+                    value=""
+                    placeholder="Mensaje"
                   >
                   </textarea>
                 </div>
@@ -261,6 +268,7 @@
               </form>
             </div>
 
+            <div id="about"></div>
             <div class="contact__content contact__content--about js-contactContent" data-name="about-us">
               <div class="about">
                 <p class="about__title">Who are we?</p>
@@ -299,7 +307,7 @@
   </div>
 
   <footer>
-      <div class='social__icons'>
+    <div class='social__icons'>
         <a href="">
           <i class="fab fa-facebook-f icon"></i>
         </a>
@@ -309,21 +317,21 @@
         <a href="">
           <i class="fab fa-instagram icon"></i>
         </a>
-      </div>
+    </div>
 
     
 
-      <div class="policies">
+    <div class="policies">
         <a href="/">Política de privacidad</a>
         <a href="/">Condiciones de uso</a>
-      </div>
-      <div class="attribution">
+    </div>
+    <div class="attribution">
         © 2022 Promedik Textil
         <!--<a href="#">Your Name Here</a>. -->
-      </div>
+    </div>
 
     
-    </footer>
+  </footer>
   <script type="text/javascript" src="static/js/app.js"></script>
 </body>
 </html>

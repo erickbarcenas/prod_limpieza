@@ -1,7 +1,7 @@
 
 
 
-@media screen and (min-width: 780px) and (max-width: 1024px){
+@media screen and (min-width: 780px) and (max-width: 1600px){
     
     .logo {
         padding: 30px;
@@ -41,6 +41,15 @@
     .btn-send {
         margin: 0.5rem;
     }
+
+    .auth__form{
+        margin: 10% auto !important;
+        width: auto;
+    }
+
+    .contact__content--form.is-show {
+        display: block;
+    }
 }
 
 @media screen and (min-width: 480px) and (max-width: 780px){
@@ -55,6 +64,11 @@
 
     .main__container .container__cards .card{
         width: 30%;
+    }
+
+    .auth__form{
+        margin: 20% auto !important;
+        width: auto;
     }
 }
 
@@ -89,6 +103,11 @@
 
     .list_horizontal_container ul li:last-child {
         margin-right: 2rem;
+    }
+
+    .auth__form{
+        margin: 30% auto;
+        width: auto;
     }
     
 }
