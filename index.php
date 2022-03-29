@@ -1,3 +1,22 @@
+<?php
+  session_start();
+
+  require 'database.php';
+
+  if (isset($_SESSION['user_id'])) {
+    $records = $conn->prepare('SELECT id, email, password FROM users WHERE id = :id');
+    $records->bindParam(':id', $_SESSION['user_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    $user = null;
+
+    if (count($results) > 0) {
+      $user = $results;
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -38,25 +57,7 @@
     </nav>
   </header>-->
 
-  <nav class="">
-    <div id="burger-menu">
-      <span></span>
-    </div>
-    <div id="menu">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="#">Productos</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a onclick="go_to_anchor('contact')">Contacto</a></li>
-        </ul>
-    </div>
-
-    <a href="index.html" class="logo">Promedik Textil</a>
-
-    <div class="shopping_cart">
-      <img src="./static/imgs/resources/shopping_cart.png" alt="shopping_cart">
-    </div>
-  </nav>
+  <?php require 'partials/header.php' ?>
 
 
   <!---->
@@ -277,12 +278,14 @@
 
     </section>
 
-    <br>
-    <br>
+  </main>
+
+  <br>
+  <br>
 
       <!-- FOOTER -->
-    <div data-sal="fade" class="sticky-cta sal-animate" data-sal-delay="1000" id="modal__index">
-      <div class="cta-container">
+  <div data-sal="fade" class="sticky-cta sal-animate" data-sal-delay="1000" id="modal__index">
+    <div class="cta-container">
         <div class="cta">
         <button class="btn__transparent btn__text_gray" onclick="show_products()" >
           Ver productos
@@ -292,10 +295,10 @@
           <a rel="noopener noreferrer" target="_blank" href="https://api.whatsapp.com/send?phone=5212221495577&amp;text=¡Hola equipo Promedik! Quiero saber más sobre sus productos">
             Chatea con nosotros</a>
           </div>
-        </div>
     </div>
-    
-    <footer>
+  </div>
+
+  <footer>
       <div class='social__icons'>
         <a href="">
           <i class="fab fa-facebook-f icon"></i>
@@ -321,7 +324,6 @@
 
     
     </footer>
-  </main>
   <script type="text/javascript" src="static/js/app.js"></script>
 </body>
 </html>
