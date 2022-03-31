@@ -322,8 +322,8 @@
     
 
     <div class="policies">
-        <a href="/">Política de privacidad</a>
-        <a href="/">Condiciones de uso</a>
+        <a href="/politica_de_privacidad.html">Política de privacidad</a>
+        <a href="/condiciones_de_uso.html">Condiciones de uso</a>
     </div>
     <div class="attribution">
         © 2022 Promedik Textil
