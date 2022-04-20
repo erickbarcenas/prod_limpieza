@@ -2,8 +2,8 @@
 
 $server = 'localhost';
 $username = 'root';
-$password = '';
-$database = 'prod_limpieza'; 
+$password = '12345678';
+$database = 'promedik_textil'; 
 
 try {
   $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
