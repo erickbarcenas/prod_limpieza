@@ -9,7 +9,7 @@ C:\AppServ\www
 ```
 
 El resultado debe de ser el siguiente:
-
+![Calculator](https://github.com/erickbarcenas/prod_limpieza/blob/main/static/imgs/readme/location.jpeg)
 
 3. Ingresar a la siguiente url
 ```
@@ -33,3 +33,4 @@ http://localhost/prod_limpieza/index.php
 ```
 
 El resultado debe de ser el siguiente:
+![Calculator](https://github.com/erickbarcenas/prod_limpieza/blob/main/static/imgs/readme/promedik.jpeg)
