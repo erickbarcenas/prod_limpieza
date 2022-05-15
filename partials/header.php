@@ -26,6 +26,8 @@
       <?php if(!empty($user)): ?>
         
       <?php endif; ?>
-      <img src="./static/imgs/resources/shopping_cart.png" alt="shopping_cart">
+      <a href="shopping_cart.php">
+        <img src="./static/imgs/resources/shopping_cart.png" alt="shopping_cart">
+      </a>
     </div>
 </nav>
