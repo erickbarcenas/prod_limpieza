@@ -9,7 +9,7 @@ C:\AppServ\www
 ```
 
 El resultado debe de ser el siguiente:
-![Calculator](https://github.com/erickbarcenas/prod_limpieza/blob/main/static/imgs/readme/location.jpeg)
+![Promedik](https://github.com/erickbarcenas/prod_limpieza/blob/main/static/imgs/readme/location.jpeg)
 
 3. Ingresar a la siguiente url
 ```
@@ -22,11 +22,14 @@ Usuario: root
 Contraseña: 12345678
 ```
 
-5. Ejecutar las migraciones del archivo migrations.sql
+5. Pegar las consultas migrations.sql en la consola de PhpMyAdmin 
 
+![Promedik](https://github.com/erickbarcenas/prod_limpieza/blob/main/static/imgs/readme/before_migrations.jpeg)
+
+Presionar el botón continuar.
 El resultado debe de ser el siguiente:
 
-!()[]
+![Promedik](https://github.com/erickbarcenas/prod_limpieza/blob/main/static/imgs/readme/after_migrations.jpeg)
 
 
 6. Ingresar a la siguiente dirección:
@@ -35,4 +38,11 @@ http://localhost/prod_limpieza/index.php
 ```
 
 El resultado debe de ser el siguiente:
-![Calculator](https://github.com/erickbarcenas/prod_limpieza/blob/main/static/imgs/readme/promedik.jpeg)
+![Promedik](https://github.com/erickbarcenas/prod_limpieza/blob/main/static/imgs/readme/promedik.jpeg)
+
+
+
+## Referencers
+
+1. (Generate Data)[https://generatedata.com/generator]
+2. (Database diagram)[https://app.quickdatabasediagrams.com/#/]

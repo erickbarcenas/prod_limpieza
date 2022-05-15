@@ -1,4 +1,4 @@
-
+DROP DATABASE IF EXISTS promedik;
 CREATE DATABASE promedik;
 
 
@@ -92,3 +92,15 @@ ON `promedik`.`customer` (`name`);
 
 CREATE INDEX `idx_customer_email`
 ON `promedik`.`customer` (`email`);
+
+
+
+
+
+INSERT INTO `customer` (`name`,`email`,`password`)
+VALUES
+  ("Ray","2426@outlook.couk","NOW30LKQ4JY"),
+  ("Diana","@icloud.edu","TXO17ELF8ST"),
+  ("Genevieve","6436@google.net","EHT77SQK5OF"),
+  ("Sybill","2249@icloud.couk","BOR43GOO5HY"),
+  ("Salvador","4395@google.net","CIJ25GAG4PT");
