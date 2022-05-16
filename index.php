@@ -54,6 +54,19 @@ if(isset($_POST["add_to_cart"])){
 }
   
 
+if(isset($_GET["action"])){
+  if($_GET["action"] == "delete"){
+    foreach($_SESSION["shopping_cart"] as $key => $value){
+
+      if(intval($value["item_id"]) == intval($_GET["id"])){
+        unset($_SESSION["shopping_cart"][$key]);
+        echo '<script> alert("Producto fuera del carrito")</script>';
+        echo '<script> window.location="index.php"</script>';
+      }
+
+    }
+  }
+}
 
 
 ?>
@@ -210,9 +223,21 @@ if(isset($_POST["add_to_cart"])){
               <td><?php echo $values["item_quantity"]; ?></td>
               <td><?php echo $values["item_price"]; ?></td>
               <td><?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
-            </tr>
-            <?php
+              <td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>">Quitar</td>
+
+              <?php
+                $total = $total + ($values["item_quantity"] *  $values["item_price"]);
                 }
+              ?>
+            </tr>
+
+            <tr>
+              <td colspan="3" align="right"> Total </td>
+              <td align="right">$ <?php echo number_format($total, 2) ?></td>
+              <td></td>
+            </tr>
+
+            <?php
             }
             ?>
           </table>
