@@ -57,8 +57,8 @@ CREATE TABLE `promedik`.`order_line` (
 
 
 CREATE TABLE `promedik`.`product` (
-  `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) NOT NULL,
   `price` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -104,3 +104,14 @@ VALUES
   ("Genevieve","6436@google.net","EHT77SQK5OF"),
   ("Sybill","2249@icloud.couk","BOR43GOO5HY"),
   ("Salvador","4395@google.net","CIJ25GAG4PT");
+
+
+
+INSERT INTO `product` (`name`,`price`,`stock`)
+VALUES
+  ("KN95", 280.00, 10),
+  ("KF94", 300.00, 10),
+  ("N95", 200.00, 10),
+  ("Bata", 150.00, 10),
+  ("Sabanas para hospital", 150.00, 10),
+  ("Overol desechable", 150.00, 10);
