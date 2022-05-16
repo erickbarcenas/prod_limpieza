@@ -189,8 +189,33 @@ if(isset($_POST["add_to_cart"])){
     <h1> Carrito </h1>
     <div id="cart"></div>
     <section class="container__cart">
-        <div class="">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <tr>
+              <th width="40%"> Nombre </th>
+              <th width="10%"> Cantidad </th>
+              <th width="20%"> Precio </th>
+              <th width="15%"> Total </th>
+              <th width="5%"> Acción </th>
+            </tr>
+            <?php
+              if(!empty($_SESSION["shopping_cart"])){
+                $total = 0;
+                foreach($_SESSION["shopping_cart"] as $keys => $values) {
+              
+            ?>
 
+            <tr>
+              <td><?php echo $values["item_name"]; ?></td>
+              <td><?php echo $values["item_quantity"]; ?></td>
+              <td><?php echo $values["item_price"]; ?></td>
+              <td><?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
+            </tr>
+            <?php
+                }
+            }
+            ?>
+          </table>
         </div>
 
     </section>
