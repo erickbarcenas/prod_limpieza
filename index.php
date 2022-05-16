@@ -3,6 +3,7 @@
 
   require 'database.php';
 
+  // HEADER
   if (isset($_SESSION['user_id'])) {
     $records = $conn->prepare('SELECT users.id, users.name, users.email, users.password FROM users WHERE id = :id');
     $records->bindParam(':id', $_SESSION['user_id']);
@@ -15,6 +16,15 @@
       $user = $results;
     }
   }
+
+  // GET PRODUCTS
+  session_start();
+
+  require 'database.php';
+  
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -113,74 +123,30 @@
     
     <div id="products"></div>
     <section class="container__cards">
-      <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas1.jpg');">
-        <div class="texts">
-          <h3>Cubrebocas 1</h3>
-          <p>$3.00 c/u</p>
-        </div>
-        <!-- any keyword -->
-      <span class="is-hidden">secret</span> 
+      
+   
 
-      </div>
 
-      <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas2.jpg');">
-        <div class="texts">
-          <h3>Cubrebocas 2</h3>
-          <p>$3.00 c/u</p>
-        </div>
-      </div>
+      <?php
+        $records = $conn->prepare('SELECT * FROM product ORDER BY id ASC');
+        $records->execute();
+        $results = $records->fetchAll(PDO::FETCH_ASSOC);
 
-      <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas3.jpg');">
-        <div class="texts">
-          <h3>Cubrebocas 3</h3>
-          <p>$3.00 c/u</p>
-        </div>
-      </div>
-
-      <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas4.jpg');">
-        <div class="texts">
-          <h3>Cubrebocas 4</h3>
-          <p>$3.00 c/u</p>
-        </div>
-      </div>
-
-      <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas1.jpg');">
-        <div class="texts">
-          <h3>Cubrebocas 5</h3>
-          <p>$3.00 c/u</p>
-        </div>
-      </div>
-
-      <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas2.jpg');">
-        <div class="texts">
-          <h3>Cubrebocas 6</h3>
-          <p>$3.00 c/u</p>
-        </div>
-      </div>
-
-      <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas3.jpg');">
-        <div class="texts">
-          <h3>Cubrebocas 7</h3>
-          <p>$3.00 c/u</p>
-        </div>
-      </div>
-
-      <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas4.jpg');">
-        <div class="texts">
-          <h3>Cubrebocas 8</h3>
-          <p>$3.00 c/u</p>
-        </div>
-      </div>
-
-      <div class="card" style="background-image: url('./static/imgs/productos/cubrebocas4.jpg');">
-        <div class="texts">
-          <h3>Cubrebocas 9</h3>
-          <p>$3.00 c/u</p>
-        </div>
-      </div>
+        if($results > 0){
+          foreach($results as $result){
+            echo "
+            <div class='card' style='background-image: url({$result['image']});'>
+              <div class='texts'>
+                <h3> {$result['name']} </h3>
+                <p> {$result['price']} </p>
+              </div>
+              <span class='is-hidden'>secret</span> 
+            </div>
+            ";
+          }
+        }
+      ?>
     </section>
-
-    
   </main>
 
   <br>
