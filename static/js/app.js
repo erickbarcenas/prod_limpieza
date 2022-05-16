@@ -3,7 +3,7 @@
   ==================================== **/
 
 window.addEventListener('load', ()=>{
-    console.log("init carousel");
+    // console.log("init carousel");
     let idx_imgs = 0;
     let time = 5000;
 
@@ -123,8 +123,6 @@ burgerMenu.addEventListener('click',function(){
   window.addEventListener("scroll", (event) => {
     let scrollY = this.scrollY;
     let scrollX = this.scrollX;
-    console.log(scrollY);
-    console.log(scrollX);
 });
 
 /** ====================================
@@ -138,7 +136,6 @@ function go_to_anchor(anchor) {
 
     var overlay = document.getElementById('menu');
     overlay.addEventListener('click',function(){
-        console.log("overlay");
         overlay.classList.toggle("overlay");
     });
     return false;

@@ -78,6 +78,20 @@ a{
 }
 
 
+.cart__form {
+    width: 100%;
+    display: inline;
+    white-space: nowrap;
+}
+
+.cart__cuantity{
+
+}
+
+.inline_flex {
+    display: inline-flex;
+}
+
 /** ====================================
    *          🔰 HEADER
 
@@ -169,12 +183,13 @@ header nav a{
   ==================================== **/
 
 
+/*  
 form {
     display: block;
-    /*margin-top: 0em;*/
     padding-top: 30px;
     width: 33.33%;
 }
+*/
 
 .input__group {
     position: relative;
@@ -729,7 +744,7 @@ footer{
 
   ==================================== **/
 
-  /* Input Forms*/
+  /* 
 input[type="text"], input[type="password"]{
     outline: none;
     padding: 20px;
@@ -755,7 +770,54 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #00b8eb;
 }
-  
+
+
+
+*/
+
+.product__img {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    object-fit: contain;
+    width: 7rem;
+    height: auto;
+}
+
+.inline_flex{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.cart__form{
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+    margin: 0.5rem auto;
+    justify-content: center;
+}
+
+.cart__cuantity {
+    width: 4rem;
+    height: 2.5rem;
+    text-align: center;
+    margin: 0 0.5rem;
+}
+
+.cart__btn_add {
+    width: 4rem;
+    height: 2.5rem;
+    padding: 10px;
+    color: #fff;
+    background: var(--color-primary);
+    margin-top: 0;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
   /* Header */
 .auth__header {
     border-bottom: 2px solid #eee;
@@ -763,7 +825,8 @@ input[type="submit"]:hover {
     margin-bottom: 10px;
     width: 100%;
     text-align: center;
-  }
+}
+
   
 .auth__header a {
     text-decoration: none;
@@ -846,10 +909,9 @@ html{
             -moz-column-gap:2rem;
             column-gap:2rem;
         }
+
     }
     
-    {
-        display:grid;
-    }
+    
     
     .contact__content--form img{width:100%;height:10rem;-o-object-fit:cover;object-fit:cover;border-radius:var(--border-radius);box-shadow:var(--box-shadow)}@media (min-width:768px){.contact__content--form img{height:24rem}}.form{display:flex;flex-direction:column;justify-content:center}.form__label{color:var(--color-title);margin-left:.25rem}.form__input{width:100%;background-color:var(--color-primary-light);border:1px solid var(--color-primary);border-radius:var(--border-radius);padding:.5rem 1rem;margin-top:.25rem;margin-bottom:.25rem}.form__input:focus-visible{outline-color:var(--color-secondary)}.form__input+.form__label{margin-top:.5rem}.form .button{margin-top:.75rem}.about{line-height:var(--line-height-text)}.about__title{font-weight:var(--font-semibold);color:var(--color-title);text-align:center;margin-bottom:.5rem}.footer{background-color:var(--color-primary-light)}.footer-wrapper{display:flex;flex-direction:column;place-items:center}.footer-wrapper svg{width:2rem;height:2rem}.footer__rights{color:var(--color-text);margin-top:1rem}

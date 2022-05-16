@@ -17,10 +17,41 @@
     }
   }
 
-  // GET PRODUCTS
-  session_start();
+  // FORM
 
-  require 'database.php';
+
+if(isset($_POST["add_to_cart"])){
+
+  if(isset($_SESSION["shopping_cart"])){
+      $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
+
+      var_dump($_SESSION["shopping_cart"]);
+
+      if(in_array($_GET["id"], $item_array_id)){
+        echo '<script> alert("Item Already Added") </script>';
+        echo '<script> window.location="index.php" </script>';
+      }else{
+
+          $count = count($_SESSION["shopping_cart"]);
+        
+          $item_array = array(
+              'item_id'       => intval($_GET["id"]),
+              'item_name'       =>  $_POST["hidden_name"],
+              'item_price'       =>  floatval($_POST["hidden_price"]),
+              'item_quantity'       =>  intval($_POST["quantity"]),
+          );
+          $_SESSION["shopping_cart"][ $count] = $item_array;
+      }
+  }else{
+      $item_array = array(
+          'item_id'       =>  intval($_GET["id"]),
+          'item_name'       =>  $_POST["hidden_name"],
+          'item_price'       =>  floatval($_POST["hidden_price"]),
+          'item_quantity'      =>  intval($_POST["quantity"]),
+      );
+      $_SESSION["shopping_cart"][0] = $item_array;
+  }
+}
   
 
 
@@ -120,13 +151,9 @@
     </div>
 
 
-    
+    <h1> Productos </h1>
     <div id="products"></div>
     <section class="container__cards">
-      
-   
-
-
       <?php
         $records = $conn->prepare('SELECT * FROM product ORDER BY id ASC');
         $records->execute();
@@ -135,11 +162,22 @@
         if($results > 0){
           foreach($results as $result){
             echo "
-            <div class='card' style='background-image: url({$result['image']});'>
-              <div class='texts'>
-                <h3> {$result['name']} </h3>
-                <p> {$result['price']} </p>
+            <div class='card'>
+              
+              <img class='product__img' src={$result['image']}  width=200 height=100/>
+              <div class='inline_flex'>
+                <p> {$result['name']} </p>
               </div>
+              <div class='inline_flex'>
+                <p> $ {$result['price']} </p>
+              </div>
+
+              <form class='cart__form' method='POST' action='index.php?action=add&id={$result['id']}'>
+                <input class='cart__cuantity' type='number' name='quantity' class='form-control' value='1'/>
+                <input type='hidden' name='hidden_name' value={$result['name']} />
+                <input type='hidden' name='hidden_price' value={$result['price']} />
+                <input class='cart__btn_add' type='submit' name='add_to_cart' class='' value='Añadir'/>
+              </form>
               <span class='is-hidden'>secret</span> 
             </div>
             ";
@@ -147,13 +185,23 @@
         }
       ?>
     </section>
+
+    <h1> Carrito </h1>
+    <div id="cart"></div>
+    <section class="container__cart">
+        <div class="">
+
+        </div>
+
+    </section>
+
   </main>
 
   <br>
   <br>
 
-      <!-- FOOTER -->
-  <div data-sal="fade" class="sticky-cta sal-animate" data-sal-delay="1000" id="modal__index">
+  <!-- FOOTER -->
+  <!-- <div data-sal="fade" class="sticky-cta sal-animate" data-sal-delay="1000" id="modal__index">
     <div class="cta-container">
         <div class="cta">
         <button class="btn__transparent btn__text_gray" onclick="show_products()" >
@@ -165,7 +213,7 @@
             Chatea con nosotros</a>
           </div>
     </div>
-  </div>
+  </div> -->
 
   <footer>
     <div class='social__icons'>
@@ -196,3 +244,7 @@
   <script type="text/javascript" src="static/js/app.js"></script>
 </body>
 </html>
+
+
+
+
