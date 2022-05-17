@@ -25,8 +25,6 @@ if(isset($_POST["add_to_cart"])){
   if(isset($_SESSION["shopping_cart"])){
       $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
 
-      var_dump($_SESSION["shopping_cart"]);
-
       if(in_array($_GET["id"], $item_array_id)){
         echo '<script> alert("Item Already Added") </script>';
         echo '<script> window.location="index.php" </script>';
@@ -85,8 +83,8 @@ if(isset($_GET["action"])){
     href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;600;700;900&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="static/css/style.css">
-  <link rel="stylesheet" href="static/css/medias.css">
+  <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="./static/css/medias.css">
   <title>Promedik Textil</title>
 
 </head>
@@ -164,7 +162,10 @@ if(isset($_GET["action"])){
     </div>
 
 
-    <h1> Productos </h1>
+    
+    <div class="container_title">
+      <h1> Productos </h1>
+    </div>
     <div id="products"></div>
     <section class="container__cards">
       <?php
@@ -199,8 +200,12 @@ if(isset($_GET["action"])){
       ?>
     </section>
 
-    <h1> Carrito </h1>
+    
+
     <div id="cart"></div>
+    <div class="container_title">
+      <h1> Carrito </h1>
+    </div>
     <section class="container__cart">
         <div class="table-responsive">
           <table class="table table-bordered">
@@ -223,7 +228,7 @@ if(isset($_GET["action"])){
               <td><?php echo $values["item_quantity"]; ?></td>
               <td><?php echo $values["item_price"]; ?></td>
               <td><?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
-              <td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>">Quitar</td>
+              <td><a class="remove" href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>">Quitar</td>
 
               <?php
                 $total = $total + ($values["item_quantity"] *  $values["item_price"]);
@@ -232,9 +237,11 @@ if(isset($_GET["action"])){
             </tr>
 
             <tr>
-              <td colspan="3" align="right"> Total </td>
-              <td align="right">$ <?php echo number_format($total, 2) ?></td>
-              <td></td>
+              <td colspan="3" align="center" class="total"> Total </td>
+              <td align="center">$ <?php echo number_format($total, 2) ?></td>
+              <td >
+                <button class="order" onclick="show_payment_form(true)"> Pagar </button>  
+              </td>
             </tr>
 
             <?php
@@ -243,6 +250,11 @@ if(isset($_GET["action"])){
           </table>
         </div>
 
+    </section>
+
+
+    <section id="payment_form" class="none_payment">
+        formulario de pago
     </section>
 
   </main>

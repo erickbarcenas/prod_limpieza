@@ -40,6 +40,8 @@ window.addEventListener('load', ()=>{
       }
   }
 
+
+  /*
 window.addEventListener('load', ()=>{
     if(!localStorage.getItem('modal')) {
         targetDiv.style.display = "block";
@@ -47,6 +49,8 @@ window.addEventListener('load', ()=>{
         targetDiv.style.display = "none"; 
     }
 })
+
+*/
 
 
 /** ====================================
@@ -140,6 +144,23 @@ function go_to_anchor(anchor) {
     });
     return false;
 }
+
+/** ====================================
+*  🔰 Index - Contact for payments
+  ==================================== **/
+
+const show_payment_form = (visibility) => {
+
+    if (visibility) {
+        document.getElementById("payment_form").classList.remove("none_payment");
+        document.getElementById("payment_form").classList.add("block_payment");
+    }else{
+        document.getElementById("payment_form").classList.remove("block_payment");
+        document.getElementById("payment_form").classList.add("none_payment");
+    }
+    
+}
+
 
 /** ====================================
 *  🔰 Index - Contact
