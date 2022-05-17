@@ -60,7 +60,7 @@ a{
     --header-height:4.5rem;
     --total: #e1ffdf;
     --red: #FF0000;
-    --order: green;
+    --green: green;
 }
 
 
@@ -150,7 +150,7 @@ td:first-child, th:first-child {
 }
 
 .order {
-    background-color: var(--order);
+    background-color: var(--green);
     color: white;
     border-radius: 0.5rem;
     padding: 0.3rem;
@@ -173,6 +173,53 @@ td:first-child, th:first-child {
 .none_payment {
     display: none;
 }
+
+
+/** ====================================
+   *          🔰 PAYMENT
+  ==================================== **/
+
+#payment_form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#payment_form .form_label {
+    margin: .5rem 1rem;
+    color: rgba(26,26,26,.7);
+    width: 100%;
+    
+}
+
+#payment_form .content_payment {
+    text-align: center;
+    vertical-align: middle;
+    margin: 10% 5%;
+}
+
+
+#payment_form .form_input{
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 0.5rem;
+    margin: .5rem 1rem;
+    width: 100%;
+}
+
+#payment_form .form_btn_pay {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: var(--green);
+    width: 100%;
+    margin: .5rem 1rem;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 0.5rem;
+    color: white;
+}
+
 /** ====================================
    *          🔰 TITLES
   ==================================== **/

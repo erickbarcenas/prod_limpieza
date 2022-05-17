@@ -83,7 +83,7 @@ if(isset($_GET["action"])){
     href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;600;700;900&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="./static/css/style4.css">
   <link rel="stylesheet" type="text/css" href="./static/css/medias.css">
   <title>Promedik Textil</title>
 
@@ -253,8 +253,44 @@ if(isset($_GET["action"])){
     </section>
 
 
-    <section id="payment_form" class="none_payment">
-        formulario de pago
+    <!-- none_payment -->
+    <section id="payment_form" class="">
+      <div class="col content_payment">
+        <h1> Total </h1>
+        <h2> 20,00 US$ </h2>
+      </div>     
+      <div class="col">
+        <form action="post">
+          <div class="form_row">
+            <label class="form_label" for="email"> Correo electrónico </label> <br>
+            <input class="form_input" type="email" id="email" name="email" />
+          </div>
+          <div class="form_row">
+            <label class="form_label" for="name"> Nombre del titular de la tarjeta </label> <br>
+            <input class="form_input" type="text" id="name" name="name" />
+          </div>
+          
+          <div class="form_row">
+            <label class="form_label" for="country"> País </label> <br>
+            <input class="form_input" type="text" id="country" name="country" />
+          </div>
+          <div class="form_row">
+            <label class="form_label" for="city"> Ciudad </label> <br>
+            <input class="form_input" type="text" id="city" name="city" />
+          </div>
+
+          <div class="form_row">
+            <label class="form_label" for="address"> Dirección </label> <br>
+            <input class="form_input" type="text" id="address" name="address" />
+          </div>
+
+          <div class="form_row">
+            <input class='form_btn_pay' type='submit'  
+            action=""
+            name='btn_pay' class='' value='Pagar'/>
+          </div>
+        </form>
+      </div>
     </section>
 
   </main>
