@@ -64,6 +64,26 @@ if(isset($_GET["action"])){
 
     }
   }
+
+  //
+
+}
+
+
+if(isset($_POST["btn_make_payment"])){
+
+  $card_data = array(
+    'item_id'       => $_POST['email'],
+    'card_number'       =>  $_POST["card_number"],
+    'card_mm_aa'       =>  floatval($_POST["card_mm_aa"]),
+    'card_cvc'       =>  intval($_POST["card_cvc"]),
+    'name'       =>  intval($_POST["name"]),
+    'country'       =>  intval($_POST["country"]),
+    'city'       =>  intval($_POST["city"]),
+    'address'       =>  intval($_POST["address"])
+  );
+
+  $_SESSION["card_data"] = $card_data;
 }
 
 
@@ -83,7 +103,7 @@ if(isset($_GET["action"])){
     href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;600;700;900&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" type="text/css" href="./static/css/style4.css">
+  <link rel="stylesheet" type="text/css" href="./static/css/style.css">
   <link rel="stylesheet" type="text/css" href="./static/css/medias.css">
   <title>Promedik Textil</title>
 
@@ -260,34 +280,46 @@ if(isset($_GET["action"])){
         <h2> 20,00 US$ </h2>
       </div>     
       <div class="col">
-        <form action="post">
+        <form method="POST" action="index.php?action=make_payment">
+
           <div class="form_row">
             <label class="form_label" for="email"> Correo electrónico </label> <br>
-            <input class="form_input" type="email" id="email" name="email" />
+            <input class="form_input" type="email" id="email" name="email" placeholder="juan@example.com.mx" />
           </div>
+
+          <div class="form_row">
+            <label class="form_label" for="card_number"> Información de la tarjeta </label> <br>
+            <div>  
+              <input class="form_input_card" type="number" id="card_number" name="card_number"  placeholder="1234 1234 1234 1234"/>
+            </div>
+            <div class="flex_item">
+            <input class="form_input_inline_left" type="number" id="card_number" name="card_mm_aa" placeholder="MM/AA"/>
+            <input class="form_input_inline_right" type="number" id="card_number" name="card_cvc" placeholder="CVC" />
+            </div>
+          </div>
+
           <div class="form_row">
             <label class="form_label" for="name"> Nombre del titular de la tarjeta </label> <br>
-            <input class="form_input" type="text" id="name" name="name" />
+            <input class="form_input" type="text" id="name" name="name" placeholder="Juan Pérez"/>
           </div>
           
           <div class="form_row">
             <label class="form_label" for="country"> País </label> <br>
-            <input class="form_input" type="text" id="country" name="country" />
+            <input class="form_input" type="text" id="country" name="country" placeholder="México"/>
           </div>
           <div class="form_row">
             <label class="form_label" for="city"> Ciudad </label> <br>
-            <input class="form_input" type="text" id="city" name="city" />
+            <input class="form_input" type="text" id="city" name="city" placeholder="CDMX"/>
           </div>
 
           <div class="form_row">
             <label class="form_label" for="address"> Dirección </label> <br>
-            <input class="form_input" type="text" id="address" name="address" />
+            <input class="form_input" type="text" id="address" name="address" placeholder="Col. del Valle"/>
           </div>
 
           <div class="form_row">
-            <input class='form_btn_pay' type='submit'  
-            action=""
-            name='btn_pay' class='' value='Pagar'/>
+            <input class="form_btn_pay" type="submit"  
+            name="btn_make_payment" class="" value="Pagar" />
           </div>
         </form>
       </div>

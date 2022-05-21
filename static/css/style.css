@@ -110,7 +110,10 @@ table {
     margin: 2rem auto;
     border: 1px transparent solid;
     border-radius:6px;
+    width: 90%;
 }
+
+
 
 tr {
     text-align: center;
@@ -182,6 +185,7 @@ td:first-child, th:first-child {
 #payment_form {
     display: grid;
     grid-template-columns: 50% 50%;
+    width: 90%;
 }
 
 #payment_form .form_label {
@@ -194,7 +198,15 @@ td:first-child, th:first-child {
 #payment_form .content_payment {
     text-align: center;
     vertical-align: middle;
-    margin: 10% 5%;
+    margin: 40% 5%;
+}
+
+
+#payment_form .flex_item {
+    display: flex;
+    margin: auto 1rem;
+    justify-content: center;
+    width: 100%;
 }
 
 
@@ -205,6 +217,37 @@ td:first-child, th:first-child {
     padding: 0.5rem;
     margin: .5rem 1rem;
     width: 100%;
+}
+
+
+#payment_form .form_input_card {
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 6px 6px 0 0;
+    padding: 0.5rem;
+    margin: .5rem 1rem 0 1rem;
+    width: 100%; 
+}
+
+
+#payment_form .form_input_inline_left {
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 0 0 0 6px;
+    padding: 0.5rem;
+    margin: 0;
+    width: 50%;
+    display: inline-flex;
+}
+
+#payment_form .form_input_inline_right {
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 0 0 6px 0;
+    padding: 0.5rem;
+    margin: 0;
+    width: 50%;
+    display: inline-flex;
 }
 
 #payment_form .form_btn_pay {
