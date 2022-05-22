@@ -2,84 +2,6 @@
   session_start();
   require 'database.php';
 
-  // echo $_SESSION["total"];
-
-
-
-
-
-  
-  if(isset($_POST["btn_make_payment"])){
-
-    $card_data = array(
-      'item_id'       => $_POST['email'],
-      'card_number'       =>  $_POST["card_number"],
-      'card_mm_aa'       =>  floatval($_POST["card_mm_aa"]),
-      'card_cvc'       =>  intval($_POST["card_cvc"]),
-      'name'       =>  intval($_POST["name"]),
-      'country'       =>  intval($_POST["country"]),
-      'city'       =>  intval($_POST["city"]),
-      'address'       =>  intval($_POST["address"])
-    );
-  
-  
-    // get products
-    $products = $_SESSION["shopping_cart"];
-
-    
-  
-    // var_dump($products);
-    $user_id = $user["id"];
-    $status_id = 1;
-    $total = $_SESSION["total"];
-    $order_id = 1;
-  
-    var_dump($total);
-    /*
-    foreach ( $products as $clave => $valor) {
-  
-      $product_id = intval($valor["item_id"]);
-      // $item_name = $valor["item_name"];
-      // $item_price = floatval($valor["item_price"]);
-      $item_quantity = intval($valor["item_quantity"]);
-  
-      // $total_amount = $item_price * $item_quantity;
-      $record = $conn->prepare('
-        INSERT INTO order_line (order_id, product_id, quantity)
-        VALUES (:order_id, :product_id, :quantity);
-      ');
-  
-      $record->bindParam(':order_id', $order_id);
-      $record->bindParam(':product_id', $product_id);
-      $record->bindParam(':quantity', $item_quantity);
-      $record->execute();
-    }
-
-    */
-  
-  
-   
-    
-   /*
-    $_SESSION["card_data"] = $card_data;
-   
-    $records = $conn->prepare('
-                    INSERT INTO order (customer_id, total_amount, status_id)
-                    VALUES (:customer_id, :total_amount, :status_id);
-                    ');
-  
-    $records->bindParam(':customer_id', $user_id);
-    $records->bindParam(':total_amount', $total_amount);
-    $records->bindParam(':status_id', $status_id);
-  
-    if($records->execute()) {
-      
-      
-    }
-   
-   */
-}
-
 ?>
 
 
@@ -98,7 +20,7 @@
 <section id="payment_form" class="">
       <div class="col content_payment">
         <h1> Total </h1>
-        <h2> <?php echo $_SESSION["total"] ?> MXN</h2>
+        <h2> $<?php echo floatval($_SESSION["total"]) ?> MXN</h2>
       </div>     
       <div class="col">
         <form method="POST" action="success.php?action=make_payment">

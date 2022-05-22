@@ -4,9 +4,11 @@
   require 'database.php';
 
   // HEADER
-  // if (isset($_SESSION['user_id'])) {
-    $records = $conn->prepare('SELECT users.id, users.name, users.email, users.password FROM users WHERE id = :id');
-    $user_id = 5;
+  if (isset($_SESSION['user_id'])) {
+    $records = $conn->prepare('SELECT customer.id, customer.name, customer.email FROM users WHERE id = :id');
+    
+    $user_id =  $_SESSION['user_id'];
+
     $records->bindParam(':id', $user_id);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
@@ -16,7 +18,9 @@
     if (count($results) > 0) {
       $user = $results;
     }
-  // }
+  }else{
+    $_SESSION['user_id'] = 5;
+  }
 
 if(isset($_POST["add_to_cart"])){
 

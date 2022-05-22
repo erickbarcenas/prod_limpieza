@@ -20,9 +20,6 @@ if(isset($_GET["action"]) && $_GET["action"] == "delete"){
 
 
 if(isset($_POST["show_form_pay"])){
-  $total = floatval($_GET["total"]);
-  $_SESSION["total"] = $total;
-
   echo '<script> window.location="payment.php"</script>';
 }
 
@@ -73,7 +70,9 @@ if(isset($_POST["show_form_pay"])){
               <td><a class="remove" href="shopping_cart.php?action=delete&id=<?php echo $values["item_id"]; ?>">Quitar</td>
 
               <?php
-                $total = $total + ($values["item_quantity"] *  $values["item_price"]);
+                $total = (intval($values["item_quantity"]) *  floatval($values["item_price"]));
+                $_SESSION["total"] = $total;
+
                 }
               ?>
             </tr>
