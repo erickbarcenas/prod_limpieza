@@ -9,6 +9,7 @@
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a onclick="go_to_anchor('contact')">Contacto</a></li>
 
+          fff
           <?php if(!empty($user)): ?>
             <br> Welcome. <?= $user['email']; ?>
             <br>You are Successfully Logged In

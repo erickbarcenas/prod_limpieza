@@ -1,86 +1,92 @@
 <?php
 
-  session_start();
+if(isset($_GET["action"])){
+  if($_GET["action"] == "delete"){
+    foreach($_SESSION["shopping_cart"] as $key => $value){
 
-  if (isset($_SESSION['user_id'])) {
-    header('Location: /prod_limpieza/index.php');
-  }
-  require 'database.php';
-
-  if (!empty($_POST['email']) && !empty($_POST['password'])) {
-    $records = $conn->prepare('SELECT id, email, password FROM users WHERE email = :email');
-    $records->bindParam(':email', $_POST['email']);
-    $records->execute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
-
-    $message = '';
-
-    if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
-      $_SESSION['user_id'] = $results['id'];
-      header("Location: /prod_limpieza/index.php");
-    } else {
-      $message = 'Sorry, those credentials do not match';
+      if(intval($value["item_id"]) == intval($_GET["id"])){
+        unset($_SESSION["shopping_cart"][$key]);
+        echo '<script> alert("Producto fuera del carrito")</script>';
+        echo '<script> window.location="index.php"</script>';
+      }
     }
   }
-
-if(isset($_POST["add_to_cart"])){
-    if(isset($_SESSION["shopping_cart"])){
-        $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
-        if(!in_array($_GET["id"], $item_array_id)){
-            $count = $count($_SESSION["shopping_cart"]);
-            $item_array = array(
-                'item_id'       =>  $_GET["id"],
-                'item_name'       =>  $_GET["hidden_name"],
-                'item_price'       =>  $_GET["hidden_price"],
-                'item_quantity'       =>  $_GET["quantity"],
-            );
-            $_SESSION["shopping_cart"][$count] = $item_array;
-        }else{
-            echo '<script> alert("Item Already Added") </script>';
-            echo '<script> window.location="index.php" </script>';
-        }
-    }else{
-        $item_array = array(
-            'item_id'       =>  $_GET["id"],
-            'item_name'       =>  $_GET["hidden_name"],
-            'item_price'       =>  $_GET["hidden_price"],
-            'item_quantity'       =>  $_GET["quantity"],
-        );
-        $_SESSION["shopping_cart"][0] = $item_array;
-    }
 }
+
+
+if(isset($_POST["show_form_pay"])){
+  $total = floatval($_GET["total"]);
+  $_SESSION["total"] = $total;
+  
+  echo '<script> window.location="payment.php"</script>';
+}
+
+
 
 ?>
 
 <!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
-      <?php
-        $query = "SELECT * FROM shopping_cart ORDER BY id ASC";
-        $result = mysqli_query($connect, query);
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_array($result)){
-      ?>
-      <div class="">
-          <form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
-            <div style="border:1px solid #333; background-color: #f1f1f1; border-radius: 5px; padding: 16px;" align="center">
-                <img src="<?php echo $row["image"]; ?>" class="img-resposive" /><br/>
-                <h4 class="text-info"><?php echo $row["name"]; ?></h4>
-                <h4 class="text-danger">$<?php echo $row["price"]; ?></h4>
-                <input type="text" name="quantity" value="1"/>
-                <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>"/>
-                <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>"/>
-                <input type="submit" name="add_to_cart" value="add_to_cart" />
-            </div>
-          </form>
-      </div>
-      <?php
+<html lang="es">
+<head>
+  <?php require 'partials/head.php' ?>
+  <title> Carrito </title>
+</head>
+
+<body>
+<!-- HEADER -->
+<?php require 'partials/header.php' ?>
+
+<div id="cart"></div>
+<br><br><br><br><br><br>
+    <div class="container_title">
+      <h1 class="ml4"> Carrito </h1>
+    </div>
+    <section class="container__cart">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <tr>
+              <th width="40%"> Nombre </th>
+              <th width="10%"> Cantidad </th>
+              <th width="20%"> Precio </th>
+              <th width="15%"> Total </th>
+              <th width="5%"> Acción </th>
+            </tr>
+            <?php
+              if(!empty($_SESSION["shopping_cart"])){
+                $total = 0;
+                foreach($_SESSION["shopping_cart"] as $keys => $values) {
+              
+            ?>
+
+            <tr>
+              <td><?php echo $values["item_name"]; ?></td>
+              <td><?php echo $values["item_quantity"]; ?></td>
+              <td><?php echo $values["item_price"]; ?></td>
+              <td><?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
+              <td><a class="remove" href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>">Quitar</td>
+
+              <?php
+                $total = $total + ($values["item_quantity"] *  $values["item_price"]);
+                }
+              ?>
+            </tr>
+
+            <tr>
+              <td colspan="3" align="center" class="total"> Total </td>
+              <td align="center">$ <?php echo number_format($total, 2) ?></td>
+              <td>
+              <form method="POST" action="shopping_cart.php?action=show_form_pay&total=<?php echo number_format($total, 2) ?>">
+                 <input class='order' type='submit' name='show_form_pay' class='' value='Pagar'/> 
+                <!-- <button class="order" onclick="show_payment_form(true)"> Pagar </button> -->
+              </form>  
+              </td>
+            </tr>
+
+            <?php
             }
-        }
-        ?>
-      
-      
+            ?>
+          </table>
+        </div>
+    </section>
   </body>
 </html>

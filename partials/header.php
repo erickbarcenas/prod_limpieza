@@ -1,3 +1,27 @@
+<?php
+  session_start();
+
+  require 'database.php';
+
+  // HEADER
+  // if (isset($_SESSION['user_id'])) {
+    $records = $conn->prepare('SELECT id, name, email FROM customer WHERE id = :id');
+    $user_id = 5;
+    $records->bindParam(':id', $user_id);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+  
+    if (count($results) > 0) {
+      $user = $results;
+    }else{
+      $user = null;
+    }
+
+?>
+
+
+
 <nav class="">
     <div id="burger-menu">
       <span></span>
@@ -14,7 +38,7 @@
           </li>
 
           
-
+          
           <?php if(!empty($user)): ?>
             <li> ¡Hola.<?= $user['name']; ?>. Nos alegra verte! </li>
     
@@ -29,11 +53,10 @@
     <a href="index.php" class="logo">Promedik Textil</a>
 
       <div class="shopping_cart">
-      <?php if(!empty($user)): ?>
-        
-      <?php endif; ?>
-      <!-- <a href="shopping_cart.php"></a> -->
-      <a onclick="go_to_anchor('cart')" class="cursor_pointer">
+      <strong> ¡Hola <?= $user['name']; ?>! </strong>
+      <!-- <a ></a> -->
+      <!--  onclick="go_to_anchor('cart')" -->
+      <a href="shopping_cart.php" class="ml1 cursor_pointer">
         <img src="./static/imgs/resources/shopping_cart.png" alt="shopping_cart">
       </a>
     </div>

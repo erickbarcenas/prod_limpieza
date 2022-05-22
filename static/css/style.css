@@ -178,6 +178,15 @@ td:first-child, th:first-child {
 }
 
 
+.ml1 {
+    margin-left: 1rem;
+}
+
+
+.ml4 {
+    margin-left: 4rem;
+}
+
 /** ====================================
    *          🔰 PAYMENT
   ==================================== **/
