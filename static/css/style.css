@@ -1039,6 +1039,17 @@ input[type="submit"]:hover {
     flex-direction: column;
 }
 
-/*--------------------------*/
 
+/** ====================================
+   *          🔰 PAYMENT
+  ==================================== **/
 
+  .container_success {
+      text-align: center;
+      margin: auto;
+  }
+
+  .success_png {
+      width: 6rem;
+      height: 6rem;
+  }
