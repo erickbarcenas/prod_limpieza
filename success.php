@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+require 'database.php';
+
+foreach($_SESSION["shopping_cart"] as $key => $value){
+
+  if(intval($value["item_id"])){
+    unset($_SESSION["shopping_cart"][$key]);
+  }
+}
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

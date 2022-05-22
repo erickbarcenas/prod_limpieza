@@ -4,6 +4,11 @@
 
   // echo $_SESSION["total"];
 
+
+
+
+
+  
   if(isset($_POST["btn_make_payment"])){
 
     $card_data = array(
@@ -20,13 +25,17 @@
   
     // get products
     $products = $_SESSION["shopping_cart"];
+
+    
   
     // var_dump($products);
     $user_id = $user["id"];
     $status_id = 1;
-  
+    $total = $_SESSION["total"];
     $order_id = 1;
   
+    var_dump($total);
+    /*
     foreach ( $products as $clave => $valor) {
   
       $product_id = intval($valor["item_id"]);
@@ -44,12 +53,14 @@
       $record->bindParam(':product_id', $product_id);
       $record->bindParam(':quantity', $item_quantity);
       $record->execute();
-      
     }
+
+    */
   
   
    
     
+   /*
     $_SESSION["card_data"] = $card_data;
    
     $records = $conn->prepare('
@@ -65,6 +76,8 @@
       
       
     }
+   
+   */
 }
 
 ?>
@@ -85,7 +98,7 @@
 <section id="payment_form" class="">
       <div class="col content_payment">
         <h1> Total </h1>
-        <h2> 20,00 US$ </h2>
+        <h2> <?php echo $_SESSION["total"] ?> MXN</h2>
       </div>     
       <div class="col">
         <form method="POST" action="success.php?action=make_payment">

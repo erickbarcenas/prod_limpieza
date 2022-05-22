@@ -7,9 +7,9 @@ window.addEventListener('load', ()=>{
     let idx_imgs = 0;
     let time = 5000;
 
-    let img_1 = 'static/imgs/slider/slider-1.jpeg';
-    let img_2 = 'static/imgs/slider/slider-2.jpeg';
-    let img_3 = 'static/imgs/slider/slider-3.jpeg';
+    let img_1 = 'https://cdn.discordapp.com/attachments/977886466904576000/977900277715861534/3.png';
+    let img_2 = 'https://cdn.discordapp.com/attachments/977886466904576000/977900278688907274/2.png';
+    let img_3 = 'https://cdn.discordapp.com/attachments/977886466904576000/977900278223368202/1.png';
 
     let imgs = [img_1, img_2, img_3];
 
@@ -40,17 +40,6 @@ window.addEventListener('load', ()=>{
       }
   }
 
-
-  /*
-window.addEventListener('load', ()=>{
-    if(!localStorage.getItem('modal')) {
-        targetDiv.style.display = "block";
-    }else{
-        targetDiv.style.display = "none"; 
-    }
-})
-
-*/
 
 
 /** ====================================
@@ -96,23 +85,6 @@ window.addEventListener('load', ()=>{
 *  🔰 Index - Hamburguer
   ==================================== **/
 
-  /*
-  var userSelection = document.getElementsByClassName('burger-menu');
-
-  for(var i_burger = 0; i_burger < userSelection.length; i_burger++) {
-    ((idx) => {
-      userSelection[idx].addEventListener("click", function() {
-            var overlay = document.getElementsByClassName('menu');
-            userSelection[idx].addEventListener('click',function(){
-            
-            this.classList.toggle("close");
-            overlay[idx].classList.toggle("overlay");
-
-        });
-       })
-    })(i_burger);
-  }*/
-
 var burgerMenu = document.getElementById('burger-menu');
 var overlay = document.getElementById('menu');
 burgerMenu.addEventListener('click',function(){
@@ -145,48 +117,4 @@ function go_to_anchor(anchor) {
     return false;
 }
 
-/** ====================================
-*  🔰 Index - Contact for payments
-  ==================================== **/
 
-const show_payment_form = (visibility) => {
-
-    if (visibility) {
-        document.getElementById("payment_form").classList.remove("none_payment");
-        document.getElementById("payment_form").classList.add("block_payment");
-    }else{
-        document.getElementById("payment_form").classList.remove("block_payment");
-        document.getElementById("payment_form").classList.add("none_payment");
-    }
-    
-}
-
-
-/** ====================================
-*  🔰 Index - Contact
-  ==================================== **/
-
-const contactButtons = document.querySelectorAll(".js-contactButton"),
-    contactContents = document.querySelectorAll(".js-contactContent"),
-    contactWrapper = document.querySelector(".js-contactWrapper");
-
-    window.addEventListener("DOMContentLoaded", (()=>{
-        contactButtons.forEach((t=>{
-            t.addEventListener("click", (t=>{
-                const o = t.target.dataset.name;
-                contactButtons.forEach((o=>{
-                    o.classList.remove("is-show"),
-                    t.target.classList.add("is-show")
-                }
-                )),
-                contactContents.forEach((t=>{
-                    t.classList.remove("is-show"),
-                    t.dataset.name == o && t.classList.add("is-show")
-                }
-                ))
-            }
-            ))
-        }
-        ))
-    }
-));

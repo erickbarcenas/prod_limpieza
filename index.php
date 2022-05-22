@@ -24,7 +24,7 @@ if(isset($_POST["add_to_cart"])){
       $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
 
       if(in_array($_GET["id"], $item_array_id)){
-        echo '<script> alert("Item Already Added") </script>';
+        echo '<script> alert("El producto está añadido, para cambiar la cantidad debe de borrarlo del carrito") </script>';
         echo '<script> window.location="index.php" </script>';
       }else{
 
@@ -60,6 +60,10 @@ if(isset($_POST["add_to_cart"])){
 </head>
 
 <body>
+  <!-- NOTIFICATION -->
+  <?php require 'partials/banner_success.php' ?>
+  
+
   <!-- HEADER -->
   <?php require 'partials/header.php' ?>
 

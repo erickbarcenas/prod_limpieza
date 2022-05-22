@@ -101,6 +101,15 @@ a{
 }
 
 
+.menu_hambuerguer_text {
+    color: #fff;
+    display: block;
+    font-size: 32px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+
 /** ====================================
    *          🔰 TABLE
   ==================================== **/
@@ -472,7 +481,6 @@ form {
     display: block;
 }
 
-
   
 .leftFlexBox {
     display: flex;
@@ -659,7 +667,7 @@ footer{
   
 .social__icons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: auto;
     margin: 1rem 4rem
 }
@@ -980,7 +988,7 @@ input[type="submit"]:hover {
     display: flex;
     object-fit: contain;
     width: 7rem;
-    height: auto;
+    height: 7rem;
 }
 
 .inline_flex {
@@ -1041,7 +1049,7 @@ input[type="submit"]:hover {
 
 
 /** ====================================
-   *          🔰 PAYMENT
+   *          🔰 SUCCESS
   ==================================== **/
 
   .container_success {
@@ -1053,3 +1061,74 @@ input[type="submit"]:hover {
       width: 6rem;
       height: 6rem;
   }
+
+.banner_success {
+    background-color: #21a151;
+    text-align: center;
+    margin: auto;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    position: absolute;
+    color: white;
+    top: 0;
+    z-index: 100000000000000000;
+    width: 100%;
+    height: 2rem;
+}
+
+
+.container_no_products {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/** ====================================
+   *          🔰 SUCCESS
+  ==================================== **/
+.about__container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/** ====================================
+   *          🔰 ABOUT
+  ==================================== **/
+
+.about_container {
+    margin: 3rem 10rem;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    display: flex;
+}
+
+
+.about_container iframe {
+    width: 70%;
+    height: 22rem;
+    margin: 2rem;
+    background-color: #777;
+}
+
+.about_container iframe {
+    display: block;
+    border-style:none;
+}
+
+
+/** ====================================
+   *          🔰 FOOTER
+  ==================================== **/
+.text_center {
+    text-align: center;
+}
+
+.container_paragraphs {
+    text-align: justify;
+    margin: auto 3rem;
+
+}

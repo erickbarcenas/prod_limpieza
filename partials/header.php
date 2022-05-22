@@ -28,9 +28,19 @@
     </div>
     <div id="menu">
         <ul>
-          <li><a href="index.php">Inicio</a></li>
+          <!-- <?php if(!empty($user)): ?>
+            <li class="menu_hambuerguer_text"> ¡Hola.<?= $user['name']; ?>. Nos alegra verte! </li>
+    
+             <li> <a href="logout.php">Cerrar sesión </a> </li> 
+          
+          <?php else: ?>
+             <li> <a href="login.php">Iniciar sesión</a> </li>
+             <li> <a href="signup.php">Registrarse</a> </li>                                                                                                     
+          <?php endif; ?>  -->      
+
+          <li><a href="index.php"> ¡Hola.<?= $user['name']; ?>. Nos alegra verte! </a></li>
           <li><a onclick="go_to_anchor('products')">Productos</a></li>
-          <li><a onclick="go_to_anchor('about')">Nosotros</a></li>
+          <li><a href="nosotros.php">Nosotros</a></li>
           <li>
             <a target="_blank" href="https://api.whatsapp.com/send/?phone=+5212284806275&text=Hola Promedik me interesaría conocer más de ustedes">
             Contacto
@@ -39,15 +49,7 @@
 
           
           
-          <?php if(!empty($user)): ?>
-            <li> ¡Hola.<?= $user['name']; ?>. Nos alegra verte! </li>
-    
-            <li> <a href="logout.php">Cerrar sesión </a> </li>
           
-          <?php else: ?>
-            <li> <a href="login.php">Iniciar sesión</a> </li>
-            <li> <a href="signup.php">Registrarse</a> </li>                                                                                                            
-          <?php endif; ?>
      </div>
 
     <a href="index.php" class="logo">Promedik Textil</a>
